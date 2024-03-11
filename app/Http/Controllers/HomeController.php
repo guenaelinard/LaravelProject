@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+
 class HomeController extends Controller
 {
-    public function index(): string
+    public function index(): \Illuminate\View\View
     {
-        return 'Homepage with a new routing';
+        return view('homepage');
     }
 }

@@ -2,15 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+
+
 class MeowController extends Controller
 {
-    public function index(): string
+    public function index(): \Illuminate\View\View
     {
-        return 'Liste des meowssages';
+        return view('meows-list');
     }
 
-    public function show($id): string
+    public function show($id): \Illuminate\View\View
     {
-        return "Un meowssage " . $id;
+        return view('meow-details')->with('id', $id);
     }
 }
