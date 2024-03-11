@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MessageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return  "Homepage";
+});
+
+Route::get('/meows', function () {
+    return "Liste des messages";
+});
+
+Route::get('/meows/{id}', function ($id) {
+    return "Message " . $id ;
 });
