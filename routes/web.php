@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MeowController;
 
@@ -30,3 +32,4 @@ use App\Http\Controllers\MeowController;
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/meows', [MeowController::class, 'index']);
 Route::get('/meows/{id}', [MeowController::class, 'show']);
+Route::post('comments', [CommentController::class, 'store'])->name('comments.store');
